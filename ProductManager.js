@@ -2,8 +2,8 @@ import { promises as fsPromises } from "fs"
 
 class ProductManager {
 
-  constructor() {
-    this.path = "./ProductManager.json"
+  constructor(path) {
+    this.path = path
     this.products = []
   }
 
@@ -115,7 +115,7 @@ class ProductManager {
 
 ////////////////////Testing///////////////////////
 
-const newProductManager = new ProductManager();
+const newProductManager = new ProductManager("./ProductManager.json");
 
 (async () => {
   await newProductManager.getProducts()
